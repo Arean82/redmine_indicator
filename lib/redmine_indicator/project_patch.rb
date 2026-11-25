@@ -7,9 +7,9 @@ module RedmineIndicator
                            'issues_by_priority_all','issues_by_status','issues_by_status_all','issues_by_tracker','issues_by_tracker_all']
 
     included do
-      serialize :indicator_left_top
-      serialize :indicator_left_bottom
-      serialize :indicator_right
+      serialize :indicator_left_top, coder: YAML
+      serialize :indicator_left_bottom, coder: YAML
+      serialize :indicator_right, coder: YAML
       safe_attributes :indicator_left_top, :indicator_left_bottom, :indicator_right
     end
 

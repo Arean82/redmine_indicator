@@ -1,89 +1,63 @@
-# Redmine Indicator
+# Redmine Indicator Plugin (Enterprise Edition)
 
-## Summary
+[![Redmine](https://img.shields.io/badge/Redmine-5.x%20%7C%206.x%20%7C%207.x-blue.svg)](https://www.redmine.org/)
+[![Ruby](https://img.shields.io/badge/Ruby-3.x%20%7C%204.x-red.svg)](https://www.ruby-lang.org/)
+[![License: GPL-2.0](https://img.shields.io/badge/License-GPL--2.0-green.svg)](LICENSE)
 
-Add block with main indicator on my page and project page
+An interactive visual metrics and charts dashboard plugin for Redmine. Adds customizable indicator blocks, progress charts, spent time burn-downs, and open/closed velocity trends to **My Page** and **Project Overview** pages.
 
-![custom-field](screenshots/1.png "My page")
+*Maintained and modernized by **Arean Narrayan** (<arean@synorastudio.in>)*  
+*Original plugin by [Frederic Aoustin](https://github.com/fraoustin).*
 
-## Usage
+---
 
-On your page, can you add
+## 🌟 Key Features
 
-- my issues by priority
+- **My Page Indicator Blocks:**
+  - Issues by Priority (interactive doughnut chart)
+  - Issues by Status & Issues by Tracker
+  - Open vs Closed trends over 10 days and 10 weeks
+  - Time spent breakdown over 10 days and 10 weeks
+  - Due issues and Today's issues widgets
+- **Project Overview Integration:**
+  - Configurable project-level indicators: `indicator_left_top`, `indicator_left_bottom`, and `indicator_right`.
+- **Chart.js Visualizations:** Clean, lightweight HTML5 canvas charts embedded directly into Redmine layouts.
+- **Rails 7.1+, Ruby 4 & Zeitwerk Ready:** Uses `serialize ..., coder: YAML` and standard `Rails.configuration.to_prepare` autoloading.
 
-![custom-field](screenshots/2.png "My page")
+---
 
-- my issues by status
+## 🚀 Installation
 
-![custom-field](screenshots/3.png "My page")
+1. Clone or copy into your Redmine `plugins` directory:
+   ```bash
+   cd /data/redmine/plugins
+   git clone https://github.com/Arean82/redmine_indicator.git
+   ```
 
-- my issues by tracker
+2. Run plugin database migrations:
+   ```bash
+   RAILS_ENV=production bin/rails redmine:plugins:migrate
+   ```
 
-![custom-field](screenshots/4.png "My page")
+3. Restart your Redmine application server:
+   ```bash
+   sudo systemctl restart redmine
+   ```
 
-- my issues due
+4. Go to **My Page** and click **Personalize this page** to add your preferred indicator blocks.
 
-![custom-field](screenshots/5.png "My page")
+---
 
-- my issues next
+## 👤 Author & Support
 
-![custom-field](screenshots/6.png "My page")
+- **Author & Maintainer:** Arean Narrayan  
+- **Email:** [arean@synorastudio.in](mailto:arean@synorastudio.in)  
+- **GitHub:** [@Arean82](https://github.com/Arean82)  
+- **Repository:** [https://github.com/Arean82/redmine_indicator](https://github.com/Arean82/redmine_indicator)
 
-- my issues today
+---
 
-![custom-field](screenshots/7.png "My page")
+## 📄 License
 
-- my issues opened closed today
-
-![custom-field](screenshots/8.png "My page")
-
-- my issues opened closed on 10 days
-
-![custom-field](screenshots/10.png "My page")
-
-- - my issues opened closed on 10 weeks
-
-- my issues summary
-
-![custom-field](screenshots/9.png "My page")
-
-
-- my spent time on 10 days
-
-![custom-field](screenshots/11.png "My page")
-
-- my spent_time on 10 weeks
-
-![custom-field](screenshots/12.png "My page")
-
-
-You can add same block in project's page "overview" with change value of custom field of projet:
-
-- indicator_left_top
-- indicator_left_bottom
-- indicator_right
-
-![custom-field](screenshots/13.png "Project")
-
-![custom-field](screenshots/14.png "Project")
-
-
-
-## Installation
-
-```
-$ cd redmine/plugins
-$ git clone https://github.com/fraoustin/redmine_indicator.git
-$ rake redmine:plugins:migrate NAME=redmine_indicator
-```
-
-restart Redmine
-
-for uninstall, you can use
-
-```
-$ cd redmine/plugins
-$ rake redmine:plugins:migrate NAME=redmine_indicator VERSION=0
-```
-
+Distributed under the **GNU General Public License v2 (GPL-2.0)**.  
+Copyright (c) 2019–2021 Frederic Aoustin, Copyright (c) 2024–2026 Arean Narrayan (<arean@synorastudio.in>).
