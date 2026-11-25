@@ -1,87 +1,155 @@
+/* Modern Enterprise Design for Redmine Indicator */
+
+.indicator-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.indicator-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
 table.indicator.summary {
     width: 100%;
     text-align: center;
     table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 12px 6px;
+    margin: 8px 0;
+}
+
+table.indicator.summary td {
+    vertical-align: middle;
+    padding: 4px;
+}
+
+table.indicator.summary .metric-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 8px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+table.indicator.summary .metric-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 table.indicator.summary .circle {
-    text-align:center;
-    line-height:0;
-    border-radius:50%;
-    border-width: 5px;
+    text-align: center;
+    line-height: 56px;
+    border-radius: 50%;
+    border-width: 4px;
     border-style: solid;
     display: inline-block;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+    width: 56px;
+    height: 56px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+
+table.indicator.summary .circle:hover {
+    transform: scale(1.05);
 }
 
 table.indicator.summary .circle h1 {
-    padding: 0px;
-    font-style: initial; 
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 48px;
 }
 
+/* Metric color themes */
 .circle.due {
-    border-color: #ef5350;
+    border-color: #ef4444;
+    background: #fef2f2;
 }
-
 .circle.due h1 a {
-    color: #ef5350;
+    color: #dc2626 !important;
+    text-decoration: none;
 }
 
 .circle.today {
-    border-color: #66bb6a;
+    border-color: #10b981;
+    background: #ecfdf5;
 }
-
 .circle.today h1 a {
-    color: #66bb6a;
+    color: #059669 !important;
+    text-decoration: none;
 }
 
 .circle.next {
-    border-color: #42a5f5;
+    border-color: #3b82f6;
+    background: #eff6ff;
 }
-
 .circle.next h1 a {
-    color: #42a5f5;
+    color: #2563eb !important;
+    text-decoration: none;
 }
 
 .circle.nothing {
-    border-color: #BDBDBD;
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}
+.circle.nothing h1 a {
+    color: #94a3b8 !important;
+    text-decoration: none;
 }
 
-.circle.nothing h1 a {
-    color: #BDBDBD;
+.metric-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 6px;
+    letter-spacing: 0.01em;
 }
 
 canvas.doughnut {
-    max-width: 400px;
-    max-height: 400px;
-    margin: auto;
+    max-width: 380px;
+    max-height: 380px;
+    margin: 12px auto;
+    display: block;
 }
 
 canvas.line {
-    max-height: 300px;
+    max-height: 280px;
     max-width: 600px;
-    margin: auto;
+    margin: 12px auto;
+    display: block;
 }
 
 a.myprojects {
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #1e293b;
 }
 
-div.list-projects a.new-issue, div.list-projects a.new-time, div.list-projects a.new-wiki  {
+div.list-projects a.new-issue, div.list-projects a.new-time, div.list-projects a.new-wiki {
     float: right;
     padding-right: 20px;
 }
 
-@media screen and (max-width: 899px)
-{
+@media screen and (max-width: 899px) {
     table.indicator.summary .circle {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
     }
-    
+    table.indicator.summary .circle h1 {
+        font-size: 18px;
+        line-height: 42px;
+    }
     div.list-projects a.new-issue, div.list-projects a.new-time, div.list-projects a.new-wiki {
         text-indent: -9999px;
     }

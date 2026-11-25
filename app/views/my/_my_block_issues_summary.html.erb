@@ -1,13 +1,31 @@
-<h3><%= l(title) %></h3>
-<table class="indicator summary">
-  <tr>
-    <td><div class="circle <%= issuesdue.length > 0 ? 'due' : 'nothing' %>"><h1><%= link_to issuesdue.length, _project_issues_path(querydue.project, querydue.as_params) %></h1></div></td>
-    <td><div class="circle <%= issuestoday.length > 0 ? 'today' : 'nothing' %>"><h1><%= link_to issuestoday.length, _project_issues_path(querytoday.project, querytoday.as_params) %></h1></div></td>
-    <td><div class="circle <%= issuesnext.length > 0 ? 'next' : 'nothing' %>"><h1><%= link_to issuesnext.length, _project_issues_path(querynext.project, querynext.as_params) %></h1></div></td>
-  </tr>
-  <tr>
-    <td><%= l(:issues_due) %></td>
-    <td><%= l(:issues_today) %></td>
-    <td><%= l(:issues_next) %></td>
-  </tr>
-</table>
+<div class="indicator-card">
+  <h3><%= l(title) %></h3>
+  <table class="indicator summary">
+    <tr>
+      <td>
+        <div class="metric-stat">
+          <div class="circle <%= issuesdue.length > 0 ? 'due' : 'nothing' %>">
+            <h1><%= link_to issuesdue.length, _project_issues_path(querydue.project, querydue.as_params) %></h1>
+          </div>
+          <div class="metric-label"><%= l(:issues_due) %></div>
+        </div>
+      </td>
+      <td>
+        <div class="metric-stat">
+          <div class="circle <%= issuestoday.length > 0 ? 'today' : 'nothing' %>">
+            <h1><%= link_to issuestoday.length, _project_issues_path(querytoday.project, querytoday.as_params) %></h1>
+          </div>
+          <div class="metric-label"><%= l(:issues_today) %></div>
+        </div>
+      </td>
+      <td>
+        <div class="metric-stat">
+          <div class="circle <%= issuesnext.length > 0 ? 'next' : 'nothing' %>">
+            <h1><%= link_to issuesnext.length, _project_issues_path(querynext.project, querynext.as_params) %></h1>
+          </div>
+          <div class="metric-label"><%= l(:issues_next) %></div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
