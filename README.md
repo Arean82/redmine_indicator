@@ -13,16 +13,24 @@ An interactive visual metrics and charts dashboard plugin for Redmine. Adds cust
 
 ## 🌟 Key Features
 
+- **Modern Hero Center-Metrics (Doughnut Charts):**
+  - Displays dynamic, bold total issue counts centered directly inside the doughnut ring hole with responsive sizing.
+  - Interactive Slate-900 floating tooltips displaying both absolute counts and percentage shares (e.g., `In Progress: 14 (35%)`).
+- **Smooth Empty State Handling:**
+  - Gracefully displays a subtle placeholder ring when queries or projects have zero matching issues, preventing layout breakage.
 - **My Page Indicator Blocks:**
   - Issues by Priority (interactive doughnut chart)
   - Issues by Status & Issues by Tracker
   - Open vs Closed trends over 10 days and 10 weeks
   - Time spent breakdown over 10 days and 10 weeks
-  - Due issues and Today's issues widgets
+  - Due issues and Today's issues interactive KPI stat cards
 - **Project Overview Integration:**
   - Configurable project-level indicators: `indicator_left_top`, `indicator_left_bottom`, and `indicator_right`.
-- **Chart.js Visualizations:** Clean, lightweight HTML5 canvas charts embedded directly into Redmine layouts.
-- **Rails 7.1+, Ruby 4 & Zeitwerk Ready:** Uses `serialize ..., coder: YAML` and standard `Rails.configuration.to_prepare` autoloading.
+- **SaaS Card Containers:**
+  - Clean card design with soft shadows, subtle borders (`#e2e8f0`), and micro-interaction hover elevations.
+- **Rails 7.1+, Ruby 4 & Zeitwerk Ready:**
+  - Modernized `init.rb` without legacy Rails 2/3/4/5 code.
+  - Safe serialization using `serialize ..., coder: YAML`.
 
 ---
 
