@@ -12,5 +12,5 @@ Redmine::Plugin.register :redmine_indicator do
 end
 
 Rails.configuration.to_prepare do
-  RedmineIndicator.apply_patch
+  Project.include(RedmineIndicator::ProjectPatch) unless Project.included_modules.include?(RedmineIndicator::ProjectPatch)
 end
