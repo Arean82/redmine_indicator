@@ -2,9 +2,10 @@ module RedmineIndicator
   module ProjectPatch
     extend ActiveSupport::Concern
 
-    ::AVAILABLE_REPORTS = ['issues_summary','issues_opened_closed_today','issues_opened_closed','issues_opened_closed_10days',
-                           'issues_opened_closed_10weeks','spent_time_10days','spent_time_10weeks','issues_by_priority',
-                           'issues_by_priority_all','issues_by_status','issues_by_status_all','issues_by_tracker','issues_by_tracker_all']
+    AVAILABLE_REPORTS = ['issues_summary','issues_opened_closed_today','issues_opened_closed','issues_opened_closed_10days',
+                         'issues_opened_closed_10weeks','spent_time_10days','spent_time_10weeks','issues_by_priority',
+                         'issues_by_priority_all','issues_by_status','issues_by_status_all','issues_by_tracker','issues_by_tracker_all']
+    ::AVAILABLE_REPORTS = AVAILABLE_REPORTS unless defined?(::AVAILABLE_REPORTS)
 
     included do
       serialize :indicator_left_top, coder: YAML
